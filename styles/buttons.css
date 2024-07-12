@@ -1,0 +1,73 @@
+.btn {
+    --btn-bg-color: var(--text-color-primary); 
+    --btn-color: var(--background-color);
+
+    border: 0;
+    background-color: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+
+    border-radius: 0.5rem;
+    font: var(--fw-md) var(--fs-base)/1.5rem var(--ff-sans);
+
+    cursor: pointer;
+
+    background: var(--btn-bg-color);
+    color: var(--btn-color);
+
+}
+
+.btn:hover{
+    --btn-color: var(--surface-color);
+    --btn-bg-color: var(--brand-gradient);
+}
+
+.btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: var(--fs-sm);
+}
+
+.btn-md {
+    padding: 0.75rem 1.5rem;
+    font-size: var(--fs-base);
+}
+
+.btn-lg {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+}
+
+.btn-transp {
+    --border-color: var(--text-color-primary);
+    position: relative;
+    z-index: 0;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 0.5rem;
+        padding: 1.5px;
+        background: var(--border-color);
+        -webkit-mask: linear-gradient(white, white) content-box, linear-gradient(white, white);
+        mask-composite: exclude;
+        z-index: -1;
+    }
+
+    & span{
+        position: relative;
+        z-index: 0;
+        background: var(--border-color);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+    }
+
+    &:hover {
+        --border-color: var(--brand-gradient);
+    }
+}
