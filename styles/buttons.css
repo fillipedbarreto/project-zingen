@@ -17,12 +17,15 @@
 
     background: var(--btn-bg-color);
     color: var(--btn-color);
-
 }
 
 .btn:hover{
     --btn-color: var(--surface-color);
     --btn-bg-color: var(--brand-gradient);
+
+    -webkit-background-clip: initial;
+    background-clip: initial;
+    color: var(--btn-color);
 }
 
 .btn-sm {
@@ -50,7 +53,7 @@
         position: absolute;
         inset: 0;
         border-radius: 0.5rem;
-        padding: 1.5px;
+        padding: 1.5px; /*ACT AS A BORDER THICKNESS*/
         background: var(--border-color);
         -webkit-mask: linear-gradient(white, white) content-box, linear-gradient(white, white);
         mask-composite: exclude;
@@ -69,5 +72,18 @@
 
     &:hover {
         --border-color: var(--brand-gradient);
+    }
+}
+
+@media (width >= 80em) {
+
+    .btn-sm {
+        padding: 0.75rem 1.5rem;
+        font-size: var(--fs-base);
+    }
+
+    .btn-md {
+        padding: 1rem 2rem;
+        font-size: 1.125rem;
     }
 }
