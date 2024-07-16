@@ -11,6 +11,7 @@
 
     -webkit-font-smoothing: antialiazing;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
 }
 
 :root {
@@ -47,8 +48,6 @@ html {
     font-size: var(--fs-base);
     line-height: 1.6;
     color: var(--text-color-primary);
-    overflow-x: hidden;
-
     scroll-behavior: smooth;
 }
 
